@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>一封暖暖的邮件</title>
+    <style>
+      html {
+        width: 100%;
+      }
+      body {
+        max-width: 70%;
+        margin: 0 auto;
+        text-align: center;
+      }
+      img {
+        max-width: 60%;
+        min-width: 240px;
+        color: #666;
+      }
+      .today {
+        font-size: 16px;
+        color: #666;
+        margin: 10px 0;
+      }
+      .temp {
+        color: #666;
+      }
+      .temp p {
+        margin: 5px 0;
+      }
+      .week {
+        color: #fc9700;
+      }
+      h1,
+      h2,
+      h3 {
+        color: #606060;
+      }
+      .over-text {
+        margin: 10px auto;
+        font-size: 14px;
+        max-width: 60%;
+        min-width: 240px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      <%= title %>
+    </h1>
+    <h2>今天<span class="week"> <%= week %> </span>,又是充满希望的一天</h2>
+    <div class="today">
+      <%= today %>
+    </div>
+    <div class="temp">
+      <p>今日气候: <%= weather %></p>
+    </div>
+    <div>
+      <h3><%= detail %></h3>
+    </div>
+    <div class="temp">
+      <p>今日最高气温: <%= temphigh %> ℃</p>
+      <p>今日最低气温: <%= templow %> ℃</p>
+    </div>
+
+    <img
+      src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587983610991&di=3e94cdf6fc948073c0b4d0a10bcb91e7&imgtype=0&src=http%3A%2F%2Fe.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2Fd62a6059252dd42a1c362a29033b5bb5c9eab870.jpg"
+      alt=""
+    />
+    <div class="over-text">
+      <%= daily %>
+    </div>
+  </body>
+</html>
