@@ -40,10 +40,12 @@ app.get('/', function (req, response) {
   });
 });
 
+// 在服务启动后，执行定时任务
 app.listen(1212, function () {
   console.log(`服务已启动`);
   job(function temp() {
     getData().then((res) => {
+      // 遍历需要接受的邮箱数组
       for (const item of receiver) {
         sendEmail(item, res);
       }
