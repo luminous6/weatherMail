@@ -1,5 +1,5 @@
 const express = require('express');
-const fetchWeather = require('./utils/weather');
+const api = require('./utils/weather');
 const job = require('./utils/schedule');
 // 接受邮件的邮箱数组
 const receiver = require('./utils/receiver');
@@ -12,10 +12,10 @@ app.set('views', __dirname + '/views');
 
 // 获取数据
 function getData() {
-  return fetchWeather()
+  return Promise.all([api.fetchSentence(), api.fetchWeather()])
     .then(function (res) {
       const data = {};
-      const { result } = res.data;
+      const { result } = res[1].data;
       // console.log(result);
       const len = result.index.length;
       data.week = result.week;
@@ -26,7 +26,7 @@ function getData() {
       data.templow = result.templow;
       data.title = 'nice to meet you!';
       data.desc = '今天又是充满希望的一天';
-      data.daily = '命名是编程中最困难的事情之一';
+      data.daily = res[0].data.data[0].content;
       return data;
     })
     .catch(function (err) {
