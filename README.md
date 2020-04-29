@@ -101,7 +101,7 @@ app.listen(1212, function () {
 });
 
 ```
-这里需要谁发送邮件在utils/receiver.js 导出的数组里面添加上需要接受的邮箱即可
+这里需要谁接受邮件在utils/receiver.js 导出的数组里面添加上需要接受的邮箱即可
 ```js
 module.exports = ['XXXXX@qq.com', 'XXXX@163.com'];
 ```
